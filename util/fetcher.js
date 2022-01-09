@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseURL =
-  process.env.NODE_END === "development"
+  process.env.NODE_ENV === "development"
     ? "http://localhost:8000/api"
     : `https://${process.env.SITE_NAME}/api`;
 
