@@ -1,18 +1,21 @@
 import React, { createContext, useContext } from "react";
 import axios from "axios";
+import { AuthContext } from "./auth";
 import { baseURL } from "../util/fetcher";
 
 const FetchContext = createContext();
 const { Provider } = FetchContext;
 
 const FetchProvider = ({ children }) => {
+  const { authState } = useContext(AuthContext);
+
   const authAxios = axios.create({
     baseURL,
   });
 
   authAxios.interceptors.request.use(
     (config) => {
-      config.headers.Authorizatoin = `Bearer ${token}`;
+      config.headers.Authorizatoin = `Bearer ${authState.token}`;
       return config;
     },
     (error) => {
