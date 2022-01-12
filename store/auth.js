@@ -61,3 +61,6 @@ const AuthProvider = ({ childer }) => {
     </Provider>
   );
 };
+
+
+export {AuthContext, AuthProvider}
