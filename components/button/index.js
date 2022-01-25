@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import cn from 'classnames'
 
-import styles from './button.module.scss'
+import styles from './button.module.css'
 
 const LinkButton = ({ href, children, ...props }) => {
   return (
