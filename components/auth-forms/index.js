@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Head from "next/head";
 
 import { Logo } from "../icons";
-import LoginForm from "./login-form";
-import SignUpForm from "./signup-form";
+import LoginForm from "./login";
+import SignUpForm from "./signup";
 
 import styles from "./auth-forms.module.css";
 

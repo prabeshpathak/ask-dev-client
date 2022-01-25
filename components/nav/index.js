@@ -1,10 +1,10 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-import NavItem from "./nav-item";
+import NavItem from "./nav-items";
 import { World } from "../icons";
 
-import styles from "./navigation.module.css";
+import styles from "./nav.module.css";
 
 const Navigation = () => {
   const router = useRouter();

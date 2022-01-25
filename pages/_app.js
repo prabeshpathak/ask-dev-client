@@ -48,7 +48,6 @@ function MyApp({ Component, pageProps }) {
           </TagProvider>
         </FetchProvider>
       </AuthProvider>
-      <Component {...pageProps} />
     </ModalContext.Provider>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 
-import { TagContext } from '../../../store/tag'
+import { TagContext } from '../../../store/tags'
 
-import Tag from '../../tag'
+import Tag from '../../tags'
 import { Spinner } from '../../icons'
 
 import styles from './Extra.module.scss'

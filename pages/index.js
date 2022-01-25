@@ -4,6 +4,9 @@ import { useRouter } from "next/router";
 
 import { publicFetch } from "../util/fetcher";
 
+import Layout from "../components/layout";
+import Header from "../components/layout/Header";
+
 const HomePage = () => {
   const router = useRouter();
 
@@ -35,7 +38,7 @@ const HomePage = () => {
     }
   };
 
-  return <div>Home{console.log(questions)}</div>;
+  return <div>HOME</div>;
 };
 
 export default HomePage;
