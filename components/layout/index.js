@@ -1,13 +1,13 @@
-import React from 'react';
-import cn from 'classnames';
+import React from 'react'
+import cn from 'classnames'
 
-import CONSTANT from '../../util/constants'
-import useWindowSize from '../../hooks/useWindowSize';
+import CONST from '../../constants'
+import useWindowSize from '../../hooks/useWindowSize'
 
-import Sidebar from './Sidebar'
-import Main from './Main'
-import Extra from './Extra'
-import Header from './Header'
+import Sidebar from './sidebar'
+import Main from './main'
+import Extra from './extra'
+import Header from './header'
 
 import styles from './layout.module.css'
 
@@ -18,9 +18,9 @@ const Layout = ({ extra = true, children }) => {
       <Header />
       <div className={styles.container}>
         <div className={cn(styles.body, !extra && styles.main)}>
-          {size.width > CONSTANT.MOBILE_SIZE && <Sidebar />}
+          {size.width > CONST.MOBILE_SIZE && <Sidebar />}
           <Main>{children}</Main>
-          {size.width > CONSTANT.TABLET_SIZE && extra && <Extra />}
+          {size.width > CONST.TABLET_SIZE && extra && <Extra />}
         </div>
       </div>
     </div>

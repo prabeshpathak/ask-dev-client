@@ -1,51 +1,52 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from 'react'
 
-const AuthContext = createContext();
-const { Provider } = AuthContext;
+const AuthContext = createContext()
+const { Provider } = AuthContext
 
-const AuthProvider = ({ childer }) => {
-  const [authState, setAuthState] = useState({});
+const AuthProvider = ({ children }) => {
+  const [authState, setAuthState] = useState({})
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const userInfo = localStorage.getItem("userInfo");
-    const expiresAt = localStorage.getItem("expiresAt");
+    const token = localStorage.getItem('token')
+    const userInfo = localStorage.getItem('userInfo')
+    const expiresAt = localStorage.getItem('expiresAt')
 
     setAuthState({
       token,
       expiresAt,
-      userInfo: userInfo ? JSON.parse(userInfo) : {},
-    });
-  }, []);
+      userInfo: userInfo ? JSON.parse(userInfo) : {}
+    })
+  }, [])
 
   const setAuthInfo = ({ token, userInfo, expiresAt }) => {
-    localStorage.setItem("token", token);
-    localStorage.setItem("userInfo", JSON.stringify(userInfo));
-    localStorage.setItem("expiresAt", expiresAt);
+    localStorage.setItem('token', token)
+    localStorage.setItem('userInfo', JSON.stringify(userInfo))
+    localStorage.setItem('expiresAt', expiresAt)
 
     setAuthState({
       token,
       userInfo,
-      expiresAt,
-    });
-  };
+      expiresAt
+    })
+  }
 
   const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userInfo");
-    localStorage.removeItem("expiresAt");
-    setAuthState({});
-  };
+    localStorage.removeItem('token')
+    localStorage.removeItem('userInfo')
+    localStorage.removeItem('expiresAt')
+    setAuthState({})
+  }
 
   const isAuthenticated = () => {
-    if (!authState || !authState.expiresAt) {
-      return false;
+    if (!authState.token || !authState.expiresAt) {
+      return false
     }
-    return new Date().getTime() / 1000 < authState.expiresAt;
-  };
+    return new Date().getTime() / 1000 < authState.expiresAt
+  }
+
   const isAdmin = () => {
-    return authState.userInfo.role === "admin";
-  };
+    return authState.userInfo?.role === 'admin'
+  }
 
   return (
     <Provider
@@ -54,13 +55,12 @@ const AuthProvider = ({ childer }) => {
         setAuthState: (authInfo) => setAuthInfo(authInfo),
         logout,
         isAuthenticated,
-        isAdmin,
+        isAdmin
       }}
     >
-      {childer}
+      {children}
     </Provider>
-  );
-};
+  )
+}
 
-
-export {AuthContext, AuthProvider}
+export { AuthContext, AuthProvider }

@@ -3,7 +3,7 @@ import cn from 'classnames'
 
 import { Alert } from '../icons'
 
-import styles from './form-input.module.scss'
+import styles from './form-input.module.css'
 
 const FormInput = ({
   label,
