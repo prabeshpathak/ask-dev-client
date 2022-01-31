@@ -13,7 +13,7 @@ class MyDocument extends Document {
       <Html lang={SiteConfig.lang}>
         <Head>
                   {/* favicon */}
-          <link rel="shortcut icon" href="/favicon.svg" />
+          <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />
