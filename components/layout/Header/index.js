@@ -53,7 +53,7 @@ const Header = ({ className, ...props }) => {
 
         {isAuthenticated() ? (
           <div className={styles.userInfo}>
-            <p>
+            <p style={{textAlign: "center"}}>
               Welcome{' '}
               <Link
                 href="/users/[user]"
@@ -62,7 +62,7 @@ const Header = ({ className, ...props }) => {
                 <a>{authState.userInfo.username}!</a>
               </Link>
             </p>
-            <a onClick={() => logout()}>Log Out</a>
+            <a onClick={() => logout()}>log out</a>
           </div>
         ) : (
           <>
