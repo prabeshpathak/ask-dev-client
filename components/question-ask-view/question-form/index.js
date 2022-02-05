@@ -62,7 +62,7 @@ const QuestionForm = () => {
           <div className={styles.container}>
             <FormInput
               label="Title"
-              inputInfo="Be specific and imagine you’re asking a question to another person"
+              inputInfo="Please be specific about what you are asking!!"
               type="text"
               name="title"
               autoComplete="off"
@@ -71,11 +71,11 @@ const QuestionForm = () => {
               onBlur={handleBlur}
               hasError={touched.title && errors.title}
               errorMessage={errors.title && errors.title}
-              placeholder="e.g Is there an R function for finding the index of an element in a vendor?"
+              placeholder="e.g Should I learn DSA for landing job at Google?"
             />
             <Textarea
               label="Body"
-              inputInfo="Include all the information someone would need to answer your question"
+              inputInfo="Add extra information about the question you are asking"
               name="text"
               autoComplete="off"
               value={values.text}
@@ -86,7 +86,7 @@ const QuestionForm = () => {
             />
             <TagInput
               label="Tags"
-              inputInfo="Add up to 5 tags to describe what your question is about"
+              inputInfo="Maximum of 5 Tags"
               type="text"
               name="tags"
               value={values.tags}
