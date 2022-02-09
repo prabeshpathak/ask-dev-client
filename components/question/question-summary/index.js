@@ -28,7 +28,6 @@ const QuestionSummary = ({
           ))}
         </div>
         <div className={styles.userDetails}>
-          {console.log(author)}
           <Link href="/users/[user]" as={`/users/${author.username}`}>
             <a>
               <img

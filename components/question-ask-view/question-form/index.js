@@ -36,9 +36,6 @@ const QuestionForm = () => {
     };
   };
 
-  const uploadImage = (base64EncodedImage)=>{
-    console.log(base64EncodedImage)
-  }
 
   return (
     <Formik

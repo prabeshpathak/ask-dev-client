@@ -79,7 +79,6 @@ const HomePage = () => {
           <Spinner />
         </div>
       )}
-      {console.log(questions)}
       {questions
         ?.sort(handleSorting())
         .map(
