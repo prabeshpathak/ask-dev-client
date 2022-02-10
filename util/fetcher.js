@@ -2,8 +2,8 @@ import axios from 'axios'
 
 const baseURL =
   process.env.NODE_ENV === 'development'
-    ? 'https://ask-dev-me.herokuapp.com/api'
-    : `https://ask-dev-me.herokuapp.com/api`
+    ? 'http://localhost:8080/api'
+    : `https://${process.env.SITE_NAME}/api`
 
 const publicFetch = axios.create({
   baseURL
