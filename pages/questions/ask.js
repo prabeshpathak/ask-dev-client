@@ -1,9 +1,9 @@
-import React from 'react';
-import Head from 'next/head'
+import React from "react";
+import Head from "next/head";
 
-import QuestionAskView from '../../components/question-ask-view'
-import Header from '../../components/layout/header'
-import QuestionForm from '../../components/question-ask-view/question-form'
+import QuestionAskView from "../../components/question-ask-view";
+import Header from "../../components/layout/header";
+import QuestionForm from "../../components/question-ask-view/question-form";
 
 const Ask = () => {
   return (
@@ -11,13 +11,12 @@ const Ask = () => {
       <Head>
         <title>Ask a Question - AskDev</title>
       </Head>
-
       <Header />
       <QuestionAskView>
         <QuestionForm />
       </QuestionAskView>
     </div>
-  )
-}
+  );
+};
 
-export default Ask
+export default Ask;
